@@ -3,8 +3,6 @@ import numpy as np
 from torchvision import datasets, transforms
 import os
 
-image = cv.imread("../data/datasets/fei/disfigure/22-12.jpg")
-
 def skin_detector(img):
     # Convert the image to the YCbCr color space
     ycbcr = cv.cvtColor(img, cv.COLOR_BGR2YCrCb)

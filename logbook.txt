@@ -73,3 +73,4 @@ wrote the ability for the train and test scripts to log their output as text fil
 
 [03 January 2023]
 wrote skin segmentation script to detect faces <- hopefully this will work with occluded faces
+uploaded to github
