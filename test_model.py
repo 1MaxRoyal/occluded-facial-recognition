@@ -45,4 +45,4 @@ percent = (correct/total)*100
 print(f'{percent}% correct')
 
 #return output to console and close file
-logger.end(loglog)
+logger.end(log)

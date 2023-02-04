@@ -77,6 +77,6 @@ def train(model, lossFunc, dLoader, mode: _MODES, optimizer = None, scheduler = 
     
     loss = loss / (1 + batch)
     
-    print("\nAverage | Loss: {:.4f} | Time: {:.3f} | Accuracy: {:.4f} ".format(loss,epTime,
+    print("\nAverage | Loss: {:.4f} | Time: {:.3f} | Accuracy: {:.4f}\n".format(loss,epTime,
                                                                                      GetMean(epAcc,len(dLoader))))
        
