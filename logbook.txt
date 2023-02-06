@@ -71,6 +71,10 @@ first succesful test with 42.5% accuracy
 [28 January 2023]
 wrote the ability for the train and test scripts to log their output as text files
 
-[03 January 2023]
+[03 February 2023]
 wrote skin segmentation script to detect faces <- hopefully this will work with occluded faces
 uploaded to github
+
+[06 February 2023]
+wrote script to add occlusion to faces to train and test model on
+occluded faces in dataset with 8 different occlusion locations
