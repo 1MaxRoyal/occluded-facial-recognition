@@ -78,3 +78,14 @@ uploaded to github
 [06 February 2023]
 wrote script to add occlusion to faces to train and test model on
 occluded faces in dataset with 8 different occlusion locations
+
+60.45% recognition success with no training on occluded faces
+
+[07 February 2023]
+training on occluded faces provides ecclectic training and validation metrics, perhaps the type of occlusion needs changing
+
+[16 February 2023]
+Demonstration to supervisor
+initial test on occluded dataset after 3x training sessions
+26.227272727272727% correct
+recognition rate has gone down 

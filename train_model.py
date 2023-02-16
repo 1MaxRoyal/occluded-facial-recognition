@@ -18,8 +18,9 @@ from load_model import model, device
 print(f"\nUsing {device} device")
 
 #setup data for datasets
-trainData = "data/datasets/fei_cropped_split/train"
-valData = "data/datasets/fei_cropped_split/val"
+data = "data/datasets/fei_cropped_occluded_split"
+trainData = data + "/train"
+valData = data + "/val"
 batchSize = 16
 epochs  = 8
 workers = 0 if os.name == 'nt' else 8
