@@ -134,3 +134,4 @@ data/datasets/
 # backup files
 *.bak
 utils/mtcnn.py
+*.jpg

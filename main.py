@@ -4,12 +4,12 @@ import cv2 as cv
 from PIL import Image, ImageTk
 import cropper
 import occluder
-import predicter
+import compare
 
 image = None
 
 sg.theme("tan")
-main_layout = [[sg.Button("Load Image")],[sg.Button("Use Webcam")],[sg.Button("Display")],[sg.Button("Crop")],[sg.Button("Occlude")],[sg.Button("Predict")],[sg.Button("EXIT")]]
+main_layout = [[sg.Button("Load Image")],[sg.Button("Use Webcam")],[sg.Button("Display")],[sg.Button("Crop")],[sg.Button("Occlude")],[sg.Button("Compare")],[sg.Button("Generate Embeddings")],[sg.Button("EXIT")]]
 main_window = sg.Window(title="Facial Recognition", layout=main_layout, margins=(100, 50), location=(100,100))
 
 # event loop
@@ -156,18 +156,24 @@ while True:
     if main_event == "Occlude":
         if image is not None:
             image = occluder.occlude(image)
-                
         else:
             error_layout = [[sg.Text("No Image Selected")]]
             error_window = sg.Window(title = "Error", layout = error_layout).read()
         
-    if main_event == "Predict":
+    if main_event == "Compare":
         if image is not None:
-            pred = predicter.predict(image)
+            pred = compare.compare(image)
+            print(pred)
         else:
             error_layout = [[sg.Text("No Image Selected")]]
             error_window = sg.Window(title = "Error", layout = error_layout).read()
-        
+    
+    if main_event == "Generate Embeddings":        
+        with open("get_embeddings.py") as f:
+            exec(f.read())
+        succ_layout = [[sg.Text("Embeddings Generated")]]
+        succ_window = sg.Window(title = "Success", layout = succ_layout).read()
+            
     if main_event == "EXIT" or main_event == sg.WIN_CLOSED:
         break
 

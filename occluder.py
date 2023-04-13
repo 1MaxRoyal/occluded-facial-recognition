@@ -40,7 +40,7 @@ def occlude(img):
 
     while win32gui.IsWindow(HWND):
         rect = win32gui.GetWindowRect(HWND)
-        print(rect)
+        #print(rect)
         imageSave = ImageGrab.grab()
         imageSave = imageSave.crop(rect)
         app.update()
