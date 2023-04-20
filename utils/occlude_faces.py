@@ -35,16 +35,17 @@ if not os.path.exists(data + "_occluded"):
 # ignoring images with the suffix 14.jpg as they are image with reduced lighting and we are not interested in that
 for i, (x, y) in enumerate(dataset):
     if not y.endswith("14.jpg"):
-        for c in range(8):
-            img = cv.imread(y)
-            # code to occlude
-            img = occlude(c,img)            
-            q = y.replace(data,data + "_occluded")
-            q = q.replace(".jpg", f"({str(c)}).jpg")
-            if not os.path.exists(os.path.dirname(q)):
-                os.mkdir(os.path.dirname(q))
-            cv.imwrite(q,img)
-            print(y)
-            print(q)
+       # for c in range(8):
+        c = 5
+        img = cv.imread(y)
+        # code to occlude
+        img = occlude(c,img)            
+        q = y.replace(data,data + "_occluded")
+        q = q.replace(".jpg", f"({str(c)}).jpg")
+        if not os.path.exists(os.path.dirname(q)):
+            os.mkdir(os.path.dirname(q))
+        cv.imwrite(q,img)
+        print(y)
+        print(q)
 
 print("Done!")

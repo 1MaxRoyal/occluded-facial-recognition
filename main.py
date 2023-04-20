@@ -5,11 +5,18 @@ from PIL import Image, ImageTk
 import cropper
 import occluder
 import compare
+from datetime import datetime
+
+def cv2tk(img):
+    timg = cv.cvtColor(img,cv.COLOR_BGR2RGB)
+    tim = Image.fromarray(timg)
+    tk_img = ImageTk.PhotoImage(image=tim)
+    return tk_img
 
 image = None
 
 sg.theme("tan")
-main_layout = [[sg.Button("Load Image")],[sg.Button("Use Webcam")],[sg.Button("Display")],[sg.Button("Crop")],[sg.Button("Occlude")],[sg.Button("Compare")],[sg.Button("Generate Embeddings")],[sg.Button("EXIT")]]
+main_layout = [[sg.Button("Load Image")],[sg.Button("Use Webcam")],[sg.Button("Display")],[sg.Button("Occlude")],[sg.Button("Compare")],[sg.Button("Generate Embeddings")],[sg.Button("EXIT")]]
 main_window = sg.Window(title="Facial Recognition", layout=main_layout, margins=(100, 50), location=(100,100))
 
 # event loop
@@ -87,11 +94,8 @@ while True:
                         img_values["-FOLDER-"], img_values["-FILE LIST-"][0]
                     )
                     print(filename)
-                    image = cv.imread(filename,1)
-                    img = cv.cvtColor(image,cv.COLOR_BGR2RGB)
-                    im = Image.fromarray(img)
-                    imgtk = ImageTk.PhotoImage(image=im)
-                    img_window["-IMAGE-"].update(data=imgtk)
+                    image = cv.imread(filename)
+                    img_window["-IMAGE-"].update(data=cv2tk(image))
                 except:
                     pass
                 
@@ -124,14 +128,15 @@ while True:
             _, frame = wc.read()
             frame = cv.flip(frame,1)
             
-            img = cv.cvtColor(frame,cv.COLOR_BGR2RGB)
-            im = Image.fromarray(img)
-            imgtk = ImageTk.PhotoImage(image=im)
-            wc_window["-IMAGE-"].update(data=imgtk)
+            img = cv2tk(frame)
+            wc_window["-IMAGE-"].update(data=img)
             
             if wc_event == "Take Photo":
-                image = frame
-                cv.imshow("Taken Image", image)
+                image = cropper.skin_cropper(frame)
+                w_name = "Cropped Image"
+                cv.namedWindow(w_name)
+                cv.moveWindow(w_name, 1100,150)
+                cv.imshow(w_name, image)
               
         wc.release()
         wc_window.close()
@@ -159,11 +164,83 @@ while True:
         else:
             error_layout = [[sg.Text("No Image Selected")]]
             error_window = sg.Window(title = "Error", layout = error_layout).read()
-        
     if main_event == "Compare":
         if image is not None:
             pred = compare.compare(image)
-            print(pred)
+            if pred is not None:
+                pred_img = cv.imread(pred)
+                cmp_layout = [
+                    [
+                     sg.Column(
+                         [
+                             [
+                                 sg.Text("Input Image")
+                                 ],
+                             [
+                                 sg.Image(key="-IMAGE-"),  
+                                 ],
+                             ]
+                         ),
+                    sg.VSeperator(),
+                    sg.Column(
+                        [
+                            [
+                                sg.Text("Match")
+                                ],
+                            [
+                                sg.Image(key="-CMP-"),  
+                                ],
+                            ]
+                        ),
+                    ]
+                ]
+                cmp_window = sg.Window("Prediction", cmp_layout)
+                load = False
+                while True:
+                    cmp_event, cmp_values = cmp_window.read(timeout=1)
+                    if load == False:
+                        cmp_window["-IMAGE-"].update(data=cv2tk(image))
+                        cmp_window["-CMP-"].update(data=cv2tk(pred_img))
+                        load = True
+                    
+                    if cmp_event == sg.WIN_CLOSED:
+                        break
+
+                cmp_window["-IMAGE-"].update(data=None)
+                cmp_window["-CMP-"].update(data=None)        
+                cmp_window.close()
+            else:
+                add_layout = [
+                    [sg.Text("This person does not appear to be in the database would you like to add them?")],
+                    [sg.Button("Yes")],
+                    [sg.Button("No")],
+                    ]
+                add_window = sg.Window("Add to Database?", add_layout)
+                while True:
+                    add_event,add_values = add_window.read()
+                    if add_event == "Yes":
+                        folder_layout = [
+                            [sg.Text('Enter Name for Database:')],
+                            [sg.Input('', enable_events=True, key='-INPUT-', font=('Arial Bold', 20), expand_x=True, justification='left')],
+                            [sg.Button('Ok')],
+                            ]
+                        folder_window = sg.Window("Name Input", folder_layout)
+                        while True:
+                            fold_event, fold_values = folder_window.read()
+                            if fold_event == 'Ok' or fold_event == sg.WIN_CLOSED:
+                                folder = str(fold_values['-INPUT-'])
+                                break
+                        folder_window.close()
+                        
+                        if fold_event == sg.WIN_CLOSED:
+                            break
+                        
+                        folder_path = "data/database/" + folder + "/"
+                        cv.imwrite(folder_path + datetime.now().strftime("%H%M%S.jpg"),image)
+                    if add_event == "No" or add_event == sg.WIN_CLOSED:
+                        break
+                
+                add_window.close()
         else:
             error_layout = [[sg.Text("No Image Selected")]]
             error_window = sg.Window(title = "Error", layout = error_layout).read()

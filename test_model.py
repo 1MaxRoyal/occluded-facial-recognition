@@ -6,7 +6,7 @@ import numpy as np
 import logger
 log=logger.log('test')
 
-testData = "data/datasets/fei_cropped_split/test"
+testData = "data/datasets/fei_cropped1_split/test"
 
 transformer = Compose([
     np.float32,

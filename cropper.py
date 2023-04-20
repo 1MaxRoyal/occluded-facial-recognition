@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 
-def skin_detector(img):
+def skin_detector(img,):
     # Convert the image to the YCbCr color space
     ycbcr = cv.cvtColor(img, cv.COLOR_BGR2YCrCb)
     
