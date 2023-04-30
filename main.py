@@ -16,7 +16,7 @@ def cv2tk(img):
 image = None
 
 sg.theme("tan")
-main_layout = [[sg.Button("Load Image")],[sg.Button("Use Webcam")],[sg.Button("Display")],[sg.Button("Occlude")],[sg.Button("Compare")],[sg.Button("Generate Embeddings")],[sg.Button("EXIT")]]
+main_layout = [[sg.Button("Load Image")],[sg.Button("Crop")],[sg.Button("Use Webcam")],[sg.Button("Display")],[sg.Button("Occlude")],[sg.Button("Compare")],[sg.Button("Generate Embeddings")],[sg.Button("EXIT")]]
 main_window = sg.Window(title="Facial Recognition", layout=main_layout, margins=(100, 50), location=(100,100))
 
 # event loop
@@ -232,11 +232,12 @@ while True:
                                 break
                         folder_window.close()
                         
-                        if fold_event == sg.WIN_CLOSED:
-                            break
-                        
-                        folder_path = "data/database/" + folder + "/"
+                        folder_path = "data/database/" + folder 
+                        print(folder_path)
+                        os.mkdir(folder_path)
+                        folder_path = folder_path + "/"
                         cv.imwrite(folder_path + datetime.now().strftime("%H%M%S.jpg"),image)
+                        break
                     if add_event == "No" or add_event == sg.WIN_CLOSED:
                         break
                 
