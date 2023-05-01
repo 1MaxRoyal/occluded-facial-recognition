@@ -8,3 +8,5 @@ the [FEI Face Database](https://fei.edu.br/~cet/facedatabase.html) has been used
 thus the apparent randomness of naming in any log files
 
 the provided embeddings are for a subset of the FEI database, but should be regenerated upon use.
+
+The application will not be able to perform recognition until the database folder has been populated and the embeddings regenerated
