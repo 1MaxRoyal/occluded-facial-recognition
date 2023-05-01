@@ -1,0 +1,154 @@
+
+Using cuda device
+
+
+Initial
+----------
+VAL 1/13 | Loss: 4.6473 | Batch Time: 0.115 Seconds | Accuracy: 0.3750
+VAL 2/13 | Loss: 5.4879 | Batch Time: 0.095 Seconds | Accuracy: 0.2500
+VAL 3/13 | Loss: 5.2229 | Batch Time: 0.047 Seconds | Accuracy: 0.5000
+VAL 4/13 | Loss: 4.9347 | Batch Time: 0.045 Seconds | Accuracy: 0.4375
+VAL 5/13 | Loss: 4.9135 | Batch Time: 0.046 Seconds | Accuracy: 0.3125
+VAL 6/13 | Loss: 4.9923 | Batch Time: 0.044 Seconds | Accuracy: 0.1875
+VAL 7/13 | Loss: 4.7572 | Batch Time: 0.043 Seconds | Accuracy: 0.4375
+VAL 8/13 | Loss: 5.0667 | Batch Time: 0.043 Seconds | Accuracy: 0.3125
+VAL 9/13 | Loss: 6.0276 | Batch Time: 0.046 Seconds | Accuracy: 0.0625
+VAL 10/13 | Loss: 5.5791 | Batch Time: 0.048 Seconds | Accuracy: 0.1875
+VAL 11/13 | Loss: 5.0291 | Batch Time: 0.047 Seconds | Accuracy: 0.3125
+VAL 12/13 | Loss: 4.6816 | Batch Time: 0.039 Seconds | Accuracy: 0.3125
+VAL 13/13 | Loss: 7.2794 | Batch Time: 0.040 Seconds | Accuracy: 0.1250
+
+Average | Loss: 5.2784 | Time: 0.698 | Accuracy: 0.2933
+
+
+Epoch 1/8
+*****
+TRAIN 1/125 | Loss: 5.1382 | Batch Time: 1.047 Seconds | Accuracy: 0.3125
+TRAIN 2/125 | Loss: 6.2132 | Batch Time: 1.681 Seconds | Accuracy: 0.1875
+TRAIN 3/125 | Loss: 6.4087 | Batch Time: 0.644 Seconds | Accuracy: 0.2500
+TRAIN 4/125 | Loss: 6.9426 | Batch Time: 0.658 Seconds | Accuracy: 0.1875
+TRAIN 5/125 | Loss: 6.8486 | Batch Time: 0.682 Seconds | Accuracy: 0.0625
+TRAIN 6/125 | Loss: 6.0937 | Batch Time: 0.729 Seconds | Accuracy: 0.1875
+TRAIN 7/125 | Loss: 4.7744 | Batch Time: 0.651 Seconds | Accuracy: 0.2500
+TRAIN 8/125 | Loss: 7.4675 | Batch Time: 0.718 Seconds | Accuracy: 0.0000
+TRAIN 9/125 | Loss: 6.0733 | Batch Time: 0.787 Seconds | Accuracy: 0.1250
+TRAIN 10/125 | Loss: 5.3747 | Batch Time: 0.727 Seconds | Accuracy: 0.2500
+TRAIN 11/125 | Loss: 5.4934 | Batch Time: 0.732 Seconds | Accuracy: 0.0625
+TRAIN 12/125 | Loss: 6.8512 | Batch Time: 0.717 Seconds | Accuracy: 0.0625
+TRAIN 13/125 | Loss: 3.9846 | Batch Time: 0.996 Seconds | Accuracy: 0.3750
+TRAIN 14/125 | Loss: 4.2962 | Batch Time: 0.697 Seconds | Accuracy: 0.3750
+TRAIN 15/125 | Loss: 4.2444 | Batch Time: 0.751 Seconds | Accuracy: 0.1875
+TRAIN 16/125 | Loss: 6.1999 | Batch Time: 0.932 Seconds | Accuracy: 0.0625
+TRAIN 17/125 | Loss: 4.2263 | Batch Time: 0.688 Seconds | Accuracy: 0.2500
+TRAIN 18/125 | Loss: 7.3670 | Batch Time: 0.683 Seconds | Accuracy: 0.1250
+TRAIN 19/125 | Loss: 5.8049 | Batch Time: 0.735 Seconds | Accuracy: 0.1875
+TRAIN 20/125 | Loss: 5.1517 | Batch Time: 0.873 Seconds | Accuracy: 0.1250
+TRAIN 21/125 | Loss: 6.0666 | Batch Time: 0.708 Seconds | Accuracy: 0.0625
+TRAIN 22/125 | Loss: 4.8711 | Batch Time: 0.818 Seconds | Accuracy: 0.2500
+TRAIN 23/125 | Loss: 4.6948 | Batch Time: 0.704 Seconds | Accuracy: 0.3750
+TRAIN 24/125 | Loss: 3.9413 | Batch Time: 0.741 Seconds | Accuracy: 0.4375
+TRAIN 25/125 | Loss: 5.3142 | Batch Time: 0.802 Seconds | Accuracy: 0.2500
+TRAIN 26/125 | Loss: 2.7132 | Batch Time: 0.717 Seconds | Accuracy: 0.6250
+TRAIN 27/125 | Loss: 3.6259 | Batch Time: 0.726 Seconds | Accuracy: 0.3750
+TRAIN 28/125 | Loss: 4.2167 | Batch Time: 0.894 Seconds | Accuracy: 0.3125
+TRAIN 29/125 | Loss: 4.2666 | Batch Time: 0.892 Seconds | Accuracy: 0.1875
+TRAIN 30/125 | Loss: 4.0477 | Batch Time: 0.741 Seconds | Accuracy: 0.1250
+TRAIN 31/125 | Loss: 6.4672 | Batch Time: 0.809 Seconds | Accuracy: 0.0625
+TRAIN 32/125 | Loss: 5.2727 | Batch Time: 0.747 Seconds | Accuracy: 0.3125
+TRAIN 33/125 | Loss: 7.0380 | Batch Time: 0.821 Seconds | Accuracy: 0.0000
+TRAIN 34/125 | Loss: 4.0708 | Batch Time: 1.004 Seconds | Accuracy: 0.3125
+TRAIN 35/125 | Loss: 5.9274 | Batch Time: 0.799 Seconds | Accuracy: 0.1250
+TRAIN 36/125 | Loss: 4.4483 | Batch Time: 0.764 Seconds | Accuracy: 0.2500
+TRAIN 37/125 | Loss: 4.5396 | Batch Time: 0.768 Seconds | Accuracy: 0.2500
+TRAIN 38/125 | Loss: 3.8792 | Batch Time: 0.723 Seconds | Accuracy: 0.4375
+TRAIN 39/125 | Loss: 4.9439 | Batch Time: 0.784 Seconds | Accuracy: 0.1250
+TRAIN 40/125 | Loss: 5.2515 | Batch Time: 0.821 Seconds | Accuracy: 0.1250
+TRAIN 41/125 | Loss: 7.6235 | Batch Time: 0.717 Seconds | Accuracy: 0.0625
+TRAIN 42/125 | Loss: 4.7138 | Batch Time: 0.975 Seconds | Accuracy: 0.1250
+TRAIN 43/125 | Loss: 5.1348 | Batch Time: 0.939 Seconds | Accuracy: 0.3125
+TRAIN 44/125 | Loss: 5.1552 | Batch Time: 0.883 Seconds | Accuracy: 0.1250
+TRAIN 45/125 | Loss: 5.7914 | Batch Time: 0.707 Seconds | Accuracy: 0.0625
+TRAIN 46/125 | Loss: 5.3963 | Batch Time: 0.780 Seconds | Accuracy: 0.3125
+TRAIN 47/125 | Loss: 3.8106 | Batch Time: 0.809 Seconds | Accuracy: 0.1875
+TRAIN 48/125 | Loss: 4.2600 | Batch Time: 0.936 Seconds | Accuracy: 0.3125
+TRAIN 49/125 | Loss: 3.9290 | Batch Time: 0.893 Seconds | Accuracy: 0.3750
+TRAIN 50/125 | Loss: 4.2102 | Batch Time: 0.781 Seconds | Accuracy: 0.1250
+TRAIN 51/125 | Loss: 6.0006 | Batch Time: 0.767 Seconds | Accuracy: 0.0000
+TRAIN 52/125 | Loss: 4.2091 | Batch Time: 0.824 Seconds | Accuracy: 0.3750
+TRAIN 53/125 | Loss: 6.7801 | Batch Time: 0.779 Seconds | Accuracy: 0.0000
+TRAIN 54/125 | Loss: 5.4648 | Batch Time: 0.782 Seconds | Accuracy: 0.1875
+TRAIN 55/125 | Loss: 6.4056 | Batch Time: 1.062 Seconds | Accuracy: 0.1250
+TRAIN 56/125 | Loss: 3.7303 | Batch Time: 0.893 Seconds | Accuracy: 0.3125
+TRAIN 57/125 | Loss: 3.9542 | Batch Time: 0.764 Seconds | Accuracy: 0.3750
+TRAIN 58/125 | Loss: 5.3194 | Batch Time: 1.085 Seconds | Accuracy: 0.1250
+TRAIN 59/125 | Loss: 5.3179 | Batch Time: 0.801 Seconds | Accuracy: 0.3125
+TRAIN 60/125 | Loss: 4.8803 | Batch Time: 0.902 Seconds | Accuracy: 0.0000
+TRAIN 61/125 | Loss: 6.1860 | Batch Time: 0.871 Seconds | Accuracy: 0.1250
+TRAIN 62/125 | Loss: 4.9929 | Batch Time: 0.814 Seconds | Accuracy: 0.1875
+TRAIN 63/125 | Loss: 5.7942 | Batch Time: 0.762 Seconds | Accuracy: 0.1875
+TRAIN 64/125 | Loss: 5.4312 | Batch Time: 1.044 Seconds | Accuracy: 0.3125
+TRAIN 65/125 | Loss: 4.9723 | Batch Time: 1.145 Seconds | Accuracy: 0.0625
+TRAIN 66/125 | Loss: 6.5208 | Batch Time: 1.178 Seconds | Accuracy: 0.0625
+TRAIN 67/125 | Loss: 4.7790 | Batch Time: 0.857 Seconds | Accuracy: 0.3750
+TRAIN 68/125 | Loss: 5.2033 | Batch Time: 0.847 Seconds | Accuracy: 0.0625
+TRAIN 69/125 | Loss: 4.1179 | Batch Time: 1.061 Seconds | Accuracy: 0.2500
+TRAIN 70/125 | Loss: 5.4869 | Batch Time: 1.173 Seconds | Accuracy: 0.1250
+TRAIN 71/125 | Loss: 4.9716 | Batch Time: 1.148 Seconds | Accuracy: 0.1250
+TRAIN 72/125 | Loss: 4.8771 | Batch Time: 0.998 Seconds | Accuracy: 0.1875
+TRAIN 73/125 | Loss: 5.0337 | Batch Time: 0.856 Seconds | Accuracy: 0.1875
+TRAIN 74/125 | Loss: 3.9349 | Batch Time: 0.964 Seconds | Accuracy: 0.3750
+TRAIN 75/125 | Loss: 3.7807 | Batch Time: 1.004 Seconds | Accuracy: 0.4375
+TRAIN 76/125 | Loss: 4.0549 | Batch Time: 1.137 Seconds | Accuracy: 0.2500
+TRAIN 77/125 | Loss: 3.9959 | Batch Time: 1.103 Seconds | Accuracy: 0.4375
+TRAIN 78/125 | Loss: 6.4328 | Batch Time: 0.952 Seconds | Accuracy: 0.0625
+TRAIN 79/125 | Loss: 4.6590 | Batch Time: 0.958 Seconds | Accuracy: 0.1875
+TRAIN 80/125 | Loss: 5.1355 | Batch Time: 1.220 Seconds | Accuracy: 0.1250
+TRAIN 81/125 | Loss: 6.5536 | Batch Time: 1.161 Seconds | Accuracy: 0.0000
+TRAIN 82/125 | Loss: 6.0030 | Batch Time: 0.850 Seconds | Accuracy: 0.1875
+TRAIN 83/125 | Loss: 5.2883 | Batch Time: 0.955 Seconds | Accuracy: 0.2500
+TRAIN 84/125 | Loss: 4.7108 | Batch Time: 1.066 Seconds | Accuracy: 0.1875
+TRAIN 85/125 | Loss: 4.4329 | Batch Time: 1.136 Seconds | Accuracy: 0.3750
+TRAIN 86/125 | Loss: 4.3735 | Batch Time: 0.876 Seconds | Accuracy: 0.2500
+TRAIN 87/125 | Loss: 5.1749 | Batch Time: 0.811 Seconds | Accuracy: 0.1875
+TRAIN 88/125 | Loss: 5.9455 | Batch Time: 0.849 Seconds | Accuracy: 0.1250
+TRAIN 89/125 | Loss: 4.9915 | Batch Time: 1.011 Seconds | Accuracy: 0.2500
+TRAIN 90/125 | Loss: 5.1810 | Batch Time: 0.932 Seconds | Accuracy: 0.1250
+TRAIN 91/125 | Loss: 6.4823 | Batch Time: 1.135 Seconds | Accuracy: 0.0000
+TRAIN 92/125 | Loss: 5.3532 | Batch Time: 0.773 Seconds | Accuracy: 0.1250
+TRAIN 93/125 | Loss: 5.2944 | Batch Time: 0.789 Seconds | Accuracy: 0.1250
+TRAIN 94/125 | Loss: 5.7715 | Batch Time: 0.781 Seconds | Accuracy: 0.0000
+TRAIN 95/125 | Loss: 4.6751 | Batch Time: 0.807 Seconds | Accuracy: 0.3125
+TRAIN 96/125 | Loss: 4.5483 | Batch Time: 0.807 Seconds | Accuracy: 0.1875
+TRAIN 97/125 | Loss: 4.8639 | Batch Time: 0.785 Seconds | Accuracy: 0.2500
+TRAIN 98/125 | Loss: 4.8234 | Batch Time: 0.850 Seconds | Accuracy: 0.2500
+TRAIN 99/125 | Loss: 5.6325 | Batch Time: 0.835 Seconds | Accuracy: 0.0625
+TRAIN 100/125 | Loss: 5.7892 | Batch Time: 0.880 Seconds | Accuracy: 0.0000
+TRAIN 101/125 | Loss: 5.0128 | Batch Time: 0.905 Seconds | Accuracy: 0.1875
+TRAIN 102/125 | Loss: 4.3549 | Batch Time: 1.242 Seconds | Accuracy: 0.4375
+TRAIN 103/125 | Loss: 5.3087 | Batch Time: 1.000 Seconds | Accuracy: 0.0625
+TRAIN 104/125 | Loss: 4.2291 | Batch Time: 0.911 Seconds | Accuracy: 0.3125
+TRAIN 105/125 | Loss: 4.0404 | Batch Time: 1.120 Seconds | Accuracy: 0.3125
+TRAIN 106/125 | Loss: 4.4382 | Batch Time: 1.152 Seconds | Accuracy: 0.2500
+TRAIN 107/125 | Loss: 3.9093 | Batch Time: 0.946 Seconds | Accuracy: 0.2500
+TRAIN 108/125 | Loss: 3.2934 | Batch Time: 0.822 Seconds | Accuracy: 0.5000
+TRAIN 109/125 | Loss: 6.2061 | Batch Time: 0.924 Seconds | Accuracy: 0.0625
+TRAIN 110/125 | Loss: 5.0497 | Batch Time: 1.034 Seconds | Accuracy: 0.3125
+TRAIN 111/125 | Loss: 7.5155 | Batch Time: 1.072 Seconds | Accuracy: 0.0625
+TRAIN 112/125 | Loss: 4.5487 | Batch Time: 1.109 Seconds | Accuracy: 0.3125
+TRAIN 113/125 | Loss: 7.3584 | Batch Time: 0.941 Seconds | Accuracy: 0.0000
+TRAIN 114/125 | Loss: 5.3658 | Batch Time: 0.846 Seconds | Accuracy: 0.0625
+TRAIN 115/125 | Loss: 5.5023 | Batch Time: 1.116 Seconds | Accuracy: 0.1875
+TRAIN 116/125 | Loss: 5.6689 | Batch Time: 1.082 Seconds | Accuracy: 0.0625
+TRAIN 117/125 | Loss: 6.0767 | Batch Time: 0.931 Seconds | Accuracy: 0.0000
+TRAIN 118/125 | Loss: 4.8311 | Batch Time: 1.010 Seconds | Accuracy: 0.1875
+TRAIN 119/125 | Loss: 5.3617 | Batch Time: 0.833 Seconds | Accuracy: 0.1250
+TRAIN 120/125 | Loss: 4.6137 | Batch Time: 0.948 Seconds | Accuracy: 0.2500
+TRAIN 121/125 | Loss: 6.9509 | Batch Time: 0.971 Seconds | Accuracy: 0.0000
+TRAIN 122/125 | Loss: 5.8793 | Batch Time: 0.977 Seconds | Accuracy: 0.0000
+TRAIN 123/125 | Loss: 8.3961 | Batch Time: 0.964 Seconds | Accuracy: 0.0000
+TRAIN 124/125 | Loss: 5.0840 | Batch Time: 1.103 Seconds | Accuracy: 0.0625
+TRAIN 125/125 | Loss: 7.2230 | Batch Time: 0.873 Seconds | Accuracy: 0.0000
+
+Average | Loss: 5.2409 | Time: 112.001 | Accuracy: 0.1905
+
+VAL 1/13 | Loss: 2.6071 | Batch Time: 0.088 Seconds | Accuracy: 0.5000

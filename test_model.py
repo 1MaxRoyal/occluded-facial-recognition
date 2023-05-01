@@ -6,7 +6,7 @@ import numpy as np
 import logger
 log=logger.log('test')
 
-testData = "data/datasets/fei_cropped1_split/test"
+testData = "data/datasets/fei_cropped_occluded_small"
 
 transformer = Compose([
     np.float32,
@@ -23,6 +23,8 @@ model.classify = True
 
 correct = 0
 total = 0
+metPred = []
+metAct = []
 
 for img in range(len(testDataset)):
     x, y = testDataset[img][0], testDataset[img][1]
@@ -33,13 +35,25 @@ for img in range(len(testDataset)):
     with torch.no_grad():
         pred = model(x.unsqueeze(0))
         _, output = torch.max(pred, 1)
-        predicted, actual = names[0][output.item()], names[0][y]
+        metPred.append(output.item())
+        metAct.append(y)
+        if output.item() > 199:
+            predicted = str(output.item())
+        else:
+            predicted = names[0][output.item()]
+        actual = names[0][y]
         total += 1
         if predicted == actual:
             correct += 1
         print(f'P "{predicted}", A "{actual}"')
-        
-        
+from sklearn import metrics
+print("Accuracy:", metrics.accuracy_score(metAct, metPred))
+print("Mean Absolute Error:", metrics.mean_absolute_error(metAct, metPred))
+print("Mean Squared Error:", metrics.mean_squared_error(metAct, metPred))
+print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(metAct, metPred))) 
+print("Root Mean Squared Log Error", np.log(np.sqrt(metrics.mean_squared_error(metAct, metPred)))) 
+print("R Squared:", metrics.r2_score(metAct, metPred)) 
+    
 print(f'Predicted "{correct}" correct out of: "{total}"')
 percent = (correct/total)*100
 print(f'{percent}% correct')

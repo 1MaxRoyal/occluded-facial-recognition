@@ -3,10 +3,9 @@ from torchvision import datasets
 from torchvision.transforms import Compose, ToTensor
 import numpy as np
 import pickle as pkl
-import cropper
 
-from load_model import model, device
-#device = 'cpu'
+from load_model import model
+device = 'cpu'
 model.to(device)
 
 class ImageFolderWithPaths(datasets.ImageFolder):

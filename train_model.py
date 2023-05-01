@@ -55,7 +55,7 @@ model.num_classes =len(trainDataset.class_to_idx)
 
 #define optimizer and scheduler
 optimizer = optim.Adam(model.parameters(), lr=0.0001)
-scheduler = MultiStepLR(optimizer, [5, 10])
+scheduler = MultiStepLR(optimizer, [2, 6])
 
 #define loss function
 lossFunc = torch.nn.CrossEntropyLoss()
